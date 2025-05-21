@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the thank you page */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font */
+            background-color: #FACC15; /* Yellow background color, similar to the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure it takes full viewport height */
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        .card-container {
+            position: relative; /* For positioning the clips */
+            @apply bg-white p-16 rounded-xl shadow-2xl flex flex-col items-center justify-center;
+            max-width: 90%; /* Max width for responsiveness */
+            width: 600px; /* Base width */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Deeper shadow */
+        }
+
+        .thank-you-text {
+            @apply text-yellow-500 font-extrabold;
+            font-size: 6rem; /* Large font size for "THANK YOU" */
+            line-height: 1; /* Adjust line height */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1); /* Text shadow for depth */
+        }
+
+        /* Responsive font size for smaller screens */
+        @media (max-width: 768px) {
+            .thank-you-text {
+                font-size: 4rem;
+            }
+            .card-container {
+                padding: 10px 30px; /* Adjust padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thank-you-text {
+                font-size: 3rem;
+            }
+            .card-container {
+                padding: 5px 20px; /* Further adjust padding */
+            }
+        }
+
+        /* Clip styles */
+        .clip {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background-color: #B0B0B0; /* Grey color for the clips */
+            border-radius: 5px;
+            top: -20px; /* Position above the card */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for clips */
+        }
+
+        .clip.left {
+            left: 20%;
+            transform: rotate(-5deg); /* Slight rotation for a natural look */
+        }
+
+        .clip.right {
+            right: 20%;
+            transform: rotate(5deg); /* Slight rotation for a natural look */
+        }
+
+        .clip::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #E0E0E0; /* Lighter grey for the inner part of the clip */
+            border-radius: 50%;
+            top: 5px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="clip left"></div>
+        <div class="clip right"></div>
+        <div class="thank-you-text">THANK YOU</div>
+    </div>
+
+</body>
+</html>
